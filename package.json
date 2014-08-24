@@ -1,0 +1,28 @@
+{
+  "name": "ng-websocket-directive",
+  "version": "0.0.0",
+  "description": "AngularJS HTML5 WebSocket powerful directive",
+  "main": "ng-websocket-directive.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilk/ng-websocket-directive"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "ng",
+    "directive",
+    "websocket",
+    "html5"
+  ],
+  "author": "Vincenzo (Wilk) Ferrari <wilk3ert@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "4155536f6d8cd36eae471a75960755098ac90db8",
+  "devDependencies": {
+    "ws": "~0.4.32"
+  }
+}
