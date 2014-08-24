@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS WebSocket Directive</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/ng-websocket/ng-websocket.js"></script>
+    <script src="../ng-websocket-directive.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="demo">
+    <!--<input type="text" ng-websocket="{url: 'ws://localhost:12345', event: 'data'}" ng-model="text"/>-->
+    <input type="text" ng-websocket="{websocket: websocket, event: 'data'}" ng-model="text"/>
+</body>
+</html>
