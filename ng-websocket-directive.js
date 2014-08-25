@@ -7,6 +7,7 @@ angular
     .directive('ngWebsocket', function ($websocket) {
         return {
             restrict: 'A',
+            require: '^ngModel',
             scope: {
                 data: '=ngWebsocket',
                 model: '=ngModel'
@@ -19,7 +20,6 @@ angular
 
                 if (typeof event === 'undefined') throw new Error('[ngWebSocket]: directive needs an event (String)');
                 if (typeof url === 'undefined' && typeof ws === 'undefined') throw new Error('[ngWebSocket]: directive needs a valid websocket ($websocket) or url (String)');
-                if (typeof attrs.ngModel === 'undefined') throw new Error('[ngWebSocket]: directive needs an ng-model associated');
 
                 if (typeof url === 'string' && url.length > 0) {
                     ws = $websocket.$new(url);
@@ -39,6 +39,10 @@ angular
                     if (typeof newModel !== 'undefined' && !fromServer) ws.$emit(event, newModel);
 
                     fromServer = false;
+                });
+
+                scope.$on('$destroy', function () {
+                    ws.$close();
                 });
             }
         };
